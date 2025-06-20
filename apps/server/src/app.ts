@@ -3,7 +3,9 @@ import dotenv from 'dotenv';
 import promptRoutes from './routes/promptRoutes';
 import { connectDB } from './config/db';
 import rateLimit from 'express-rate-limit';
+import cors from 'cors'
 import { errorHandler } from './middleware/errorHandler';
+import helmet from 'helmet';
 
 
 dotenv.config();
@@ -17,7 +19,7 @@ app.use(express.json());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: process.env.MAX_REQUEST_LIMIT || 100 // limit each IP to 100 requests per windowMs
+  max: process.env.MAX_REQUEST_LIMIT ? parseInt(process.env.MAX_REQUEST_LIMIT, 10) : 100 // limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
 
