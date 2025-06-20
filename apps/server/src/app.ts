@@ -21,7 +21,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: process.env.MAX_REQUEST_LIMIT ? parseInt(process.env.MAX_REQUEST_LIMIT, 10) : 100 // limit each IP to 100 requests per windowMs
 });
-app.use(limiter);
+// app.use(limiter);
 
 app.use(errorHandler);
 
