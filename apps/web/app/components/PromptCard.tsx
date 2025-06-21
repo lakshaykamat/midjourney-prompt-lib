@@ -5,7 +5,7 @@ type Props = { prompt: any };
 
 export default function PromptCard({ prompt }: Props) {
   return (
-    <Link href={`prompt/${prompt._id}`} className="rounded overflow-hidden bg-zinc-950 border-zinc-400 shadow-md transition-transform duration-200">
+    <Link href={`/prompt/${prompt._id}`} className="rounded overflow-hidden bg-zinc-950 border-zinc-400 shadow-md transition-transform duration-200">
       <Image
         src={prompt.images.original}
         alt={prompt.title}

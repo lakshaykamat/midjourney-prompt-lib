@@ -34,7 +34,6 @@ export default function PromptPage() {
       </div>
     );
   }
-
   return (
     <div className="bg-zinc-900 text-white min-h-screen">
       {/* Header */}
