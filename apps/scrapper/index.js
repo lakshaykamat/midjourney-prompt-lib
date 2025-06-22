@@ -39,7 +39,7 @@ const promptSchema = new mongoose.Schema({
 
 const Prompt = mongoose.model("Prompt", promptSchema);
 
-
+app.get("/",(req,res)=>res.send("server is up!"))
 app.get('/api/logs', async (req, res) => {
   try {
     // Count prompts with at least one image
