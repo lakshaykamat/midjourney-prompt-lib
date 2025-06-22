@@ -20,9 +20,11 @@ export default function PromptPage() {
   useEffect(() => {
     const fetchData = async () => {
       const fetchedPrompt = await getPrompt(slug);
-      const fetchedMore = await getPrompts();
+      console.log(fetchedPrompt)
+      const fetchedMore = await getPrompts(1,30);
       setPrompt(fetchedPrompt === false ? null : fetchedPrompt);
-      setMorePrompts(fetchedMore === false ? null : fetchedMore);
+      setMorePrompts(Array.isArray(fetchedMore?.data) ? fetchedMore.data : null);
+
     };
     fetchData();
   }, [slug]);
@@ -86,7 +88,7 @@ export default function PromptPage() {
       {/* More Prompts Section */}
       <div className="max-w-7xl mx-auto w-full px-4 py-12">
         <h2 className="text-2xl font-bold mb-6 text-white">More Prompts</h2>
-        <PromptGallery maxLimit={10} prompts={morePrompts} />
+        <PromptGallery maxLimit={30} prompts={morePrompts} />
       </div>
     </div>
   );
