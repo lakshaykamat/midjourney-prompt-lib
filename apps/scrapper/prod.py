@@ -18,7 +18,7 @@ OUTPUT_DIR = "output"
 LOAD_MORE_CLICKS = 100     # 🔁 Number of times to click "Load More"
 TEST_MODE = False
 MAX_TEST_POSTS = 3
-NODE_ENDPOINT = "http://localhost:3200/api/save-post"
+NODE_ENDPOINT = "https://midjourney-prompt-lib-scrapper.onrender.com/api/save-post"
 
 # ---------- SETUP BROWSER ----------
 def setup_driver():
